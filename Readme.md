@@ -28,7 +28,21 @@ Der Aufrufer ubergibt der Funktion acceptSamples(samplePacket) eine folge von Sa
 
 ### reset()
 #### Vertrag:
-Die Funktion entleert die angenomene bisher gespeicherte Samples in Analyzer. 
+Die Funktion entleert die angenomenen bisher gespeicherten Samples in Analyzer. 
 
 ## Algorithmen
 
+### addSamples(samplePacket) 
+#### Vertrag:
+Die funktion konkatiniert neue audio Samples an den Analyzer
+
+### getBlock() returns eine Blockgroße von den gespeicherten Samples 
+#### Vertrag:
+Die funktion liefert von den gespeicherten Samples den in config festgelegte Blockgroße zurück. sind samples weniger wird draufhingewiesen.
+
+### creatWindow() retuns array of weights
+#### Vetrag:
+Anhand des vorgegebenen WindowType in Konstruktor des Analysers berechnet diese Funktion die weights für das Window. 
+
+### applyWindow(block, weights) 
+#### Vertrag
