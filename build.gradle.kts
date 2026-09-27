@@ -5,6 +5,16 @@ plugins {
 group = "dev.usman.acoustic"
 version = "1.0-SNAPSHOT"
 
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+tasks.withType<JavaCompile>().configureEach {
+    options.encoding = "UTF-8"
+    options.release.set(17)
+}
+
 repositories {
     mavenCentral()
 }
